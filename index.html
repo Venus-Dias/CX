@@ -398,15 +398,16 @@ section{padding:7rem 4rem}
 }
 .case-thumb {
     width: 100%;
-    height: auto;           /* Remove fixed height */
-    overflow: visible;      /* Change from 'hidden' */
+    height: 250px;          /* Fixed height for consistency */
+    overflow: hidden;
+    position: relative;
 }
 
 .case-thumb img {
     width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;    /* Change from 'cover' to 'contain' */
+    height: 100%;
+    object-fit: contain;    /* Shows entire image, may add letterboxing */
+    object-position: top;
 }
 .case-card:hover .case-thumb{background:rgba(184,144,58,.12)}
 .case-tag{font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:.5rem}
