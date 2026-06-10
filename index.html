@@ -533,7 +533,25 @@ section{padding:7rem 4rem}
 }
 .skill-cat:hover .skill-tag{background:var(--gold-pale);color:#6b4c1a}
 [data-theme="dark"] .skill-cat:hover .skill-tag{background:rgba(184,144,58,.12);color:var(--gold-lt)}
-
+/* Centers the 10th card in a 3-column grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.skill-cat {
+  /* Your existing styles... */
+  text-align: center;  /* Add this */
+}
+.skill-cat-icon {
+  /* Your existing styles... */
+  display: inline-block; /* Change from block if needed */
+  margin: 0 auto;        /* Add this to center */
+}
+/* Targets the 10th card (last child) and centers it */
+.skills-grid .skill-cat:last-child {
+  grid-column: 2 / 3;  /* Places it in column 2 (center) */
+}
 /* ═══════════════════════════════════════
    PROOF / METRICS
 ═══════════════════════════════════════ */
@@ -1155,12 +1173,11 @@ footer{
         <div class="skill-cat-name">CX Strategy</div>
         <div class="skill-tags">
           <span class="skill-tag">CX Principles</span>
-          <span class="skill-tag">Journey Governance Frameworks</span>
-          <span class="skill-tag">NPS / CSAT / VOC</span>
+          <span class="skill-tag">End-to-End Journey Mapping</span>
           <span class="skill-tag">CX Roadmapping</span>
           <span class="skill-tag">Experience Measurement</span>
-          <span class="skill-tag">End-to-End Journey Mapping</span>
           <span class="skill-tag">Service Blueprinting</span>
+  <span class="skill-tag">NPS / CSAT / VOC</span>        
         </div>
       </div>
       <div class="skill-cat reveal">
@@ -1172,7 +1189,8 @@ footer{
           <span class="skill-tag">Chatbot &amp; IVR Design</span>
           <span class="skill-tag">Self-Service Journeys</span>
           <span class="skill-tag">Channel Strategy</span>
-        </div>
+        <span class="skill-tag">AI &amp; Cloud-Based Tools</span>
+</div>
       </div>
       <div class="skill-cat reveal">
         <div class="skill-cat-icon">🗺️</div>
@@ -1183,7 +1201,8 @@ footer{
           <span class="skill-tag">User Testing</span>
           <span class="skill-tag">Prototyping</span>
           <span class="skill-tag">Focus Groups</span>
-        </div>
+           <span class="skill-tag">Journey Governance Frameworks</span>
+</div>
       </div>
       <div class="skill-cat reveal">
         <div class="skill-cat-icon">📊</div>
@@ -1192,9 +1211,11 @@ footer{
           <span class="skill-tag">Power BI</span>
           <span class="skill-tag">SAS Programming</span>
           <span class="skill-tag">MIS Reporting</span>
-          <span class="skill-tag">VOC Text Analytics</span>
+          <span class="skill-tag">Tech Fluency: Workplace Platforms</span>
+<span class="skill-tag">VOC Text Analytics</span>
           <span class="skill-tag">Sentiment Analysis</span>
-        </div>
+       <span class="skill-tag">Data Literacy &amp; Storytelling</span>
+ </div>
       </div>
       <div class="skill-cat reveal">
         <div class="skill-cat-icon">👥</div>
@@ -1236,8 +1257,8 @@ footer{
           <span class="skill-tag">Workshop Facilitation</span>
           <span class="skill-tag">Discovery Sessions</span>
           <span class="skill-tag">C-Suite Presentations</span>
-          <span class="skill-tag">Cross-Functional Alignment</span>
-          <span class="skill-tag">Customer Advocacy</span>
+          <span class="skill-tag">Customer Advocacy</span><span class="skill-tag">Cross-Functional Alignment</span>
+          
         </div>
       </div>
       <div class="skill-cat reveal">
@@ -1247,6 +1268,18 @@ footer{
           <span class="skill-tag">CX Measurement</span>
           <span class="skill-tag">Commercial Recommendations</span>
           <span class="skill-tag">ROI Framing</span>
+        </div>
+      </div>
+      <div class="skill-cat reveal center-on-last-row">
+        <div class="skill-cat-icon">🧠</div>
+        <div class="skill-cat-name">Core Human Attributes</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Adaptability in Fast-Changing Environments</span>
+         <span class="skill-tag">Emotional Intelligence for Leadership &amp; Teamwork</span>
+<span class="skill-tag">Relentless Problem-Solving at the Root Cause</span>
+<span class="skill-tag">Comfort with Ambiguity &amp; Imperfect Information</span>
+<span class="skill-tag">Resilience Under Pressure Without Burning Out</span>
+<span class="skill-tag">Intellectual Curiosity &amp; Continuous Learning</span>
         </div>
       </div>
     </div>
