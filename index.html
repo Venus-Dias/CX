@@ -1694,7 +1694,7 @@ async function handleSubmit() {
     window.location.href = `mailto:venusdias@gmail.com?subject=Message from ${name}&body=From: ${name} (${email})%0A%0A${msg}`;
     contactForm.style.display = 'none';
     formSuccess.style.display = 'block';
-    formSuccess.innerHTML = `<strong>Message received ✓</strong><br>Thanks, ${name}! Your email client will open to complete the send.`;
+    formSuccess.innerHTML = `<strong>Message Sent ✓</strong><br>Thanks, ${name}! Your email client will open to complete the send.`;
   } finally {
     submitBtn.innerHTML = originalText;
     submitBtn.disabled = false;
