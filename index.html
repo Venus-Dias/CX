@@ -504,7 +504,9 @@ section{padding:7rem 4rem}
 .skill-cat{
   background:var(--paper-surface);
   border:1px solid var(--border);
-  border-radius:16px;padding:1.5rem;
+  border-radius:16px;
+  padding:1.5rem;
+  text-align:center;
   transition:border-color .2s,box-shadow .2s,transform .2s var(--ease);
 }
 .skill-cat:hover{
@@ -513,47 +515,50 @@ section{padding:7rem 4rem}
   transform:translateY(-3px);
 }
 .skill-cat-icon{
-  width:34px;height:34px;
+  width:34px;
+  height:34px;
   background:var(--gold-pale);
   border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.85rem;margin-left: auto;
-  margin-right: auto;
-  margin-bottom: .85rem; text-align: center;
-}
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.85rem;
+  margin:0 auto .85rem auto;
 }
 [data-theme="dark"] .skill-cat-icon{background:rgba(184,144,58,.15)}
 .skill-cat-name{
-  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.75rem;
+  font-size:.7rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:.75rem;
 }
-.skill-tags{display:flex;flex-wrap:wrap;justify-content: center;gap:.4rem}
+.skill-tags{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.4rem;
+}
 .skill-tag{
-  font-size:.74rem;padding:.25rem .65rem;
-  background:var(--paper-warm);color:var(--ink-soft);
-  border:1px solid var(--border);border-radius:8px;
+  font-size:.74rem;
+  padding:.25rem .65rem;
+  background:var(--paper-warm);
+  color:var(--ink-soft);
+  border:1px solid var(--border);
+  border-radius:8px;
   transition:background .2s,color .2s;
 }
-.skill-cat:hover .skill-tag{background:var(--gold-pale);color:#6b4c1a}
-[data-theme="dark"] .skill-cat:hover .skill-tag{background:rgba(184,144,58,.12);color:var(--gold-lt)}
-/* Centers the 10th card in a 3-column grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.skill-cat:hover .skill-tag{
+  background:var(--gold-pale);
+  color:#6b4c1a;
 }
-.skill-cat {
-  /* Your existing styles... */
-  text-align: center;  /* Add this */
-}
-.skill-cat-icon {
-  /* Your existing styles... */
-  display: inline-block; /* Change from block if needed */
-  margin: 0 auto;        /* Add this to center */
+[data-theme="dark"] .skill-cat:hover .skill-tag{
+  background:rgba(184,144,58,.12);
+  color:var(--gold-lt);
 }
 /* Targets the 10th card (last child) and centers it */
 .skills-grid .skill-cat:last-child {
-  grid-column: 2 / 3;  /* Places it in column 2 (center) */
+  grid-column: 2 / 3;
 }
 /* ═══════════════════════════════════════
    PROOF / METRICS
