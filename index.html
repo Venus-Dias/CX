@@ -1636,14 +1636,12 @@ track.addEventListener('touchend', e => {
   if (Math.abs(dx) > 40) { dx < 0 ? nextSlide() : prevSlide(); }
 }, { passive: true });
 
-// ========== FORMSUBMIT.CO INTEGRATION ==========
+// ========== FORMSUBMIT.CO INTEGRATION (FIXED) ==========
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
-async function handleSubmit(e) {
-  // Prevent default if this is called from form submit
-  if (e) e.preventDefault();
-  
+// Fixed: No parameter needed since button doesn't pass event
+async function handleSubmit() {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const msg = document.getElementById('message').value.trim();
@@ -1701,10 +1699,8 @@ async function handleSubmit(e) {
     submitBtn.innerHTML = originalText;
     submitBtn.disabled = false;
   }
-  
   return false;
 }
-
 // Preserve your original input border reset functionality
 ['name', 'email', 'message'].forEach(id => {
   const element = document.getElementById(id);
@@ -1714,12 +1710,6 @@ async function handleSubmit(e) {
     });
   }
 });
-
-// Attach the submit handler to your form button
-const submitBtn = document.querySelector('.form-submit');
-if (submitBtn) {
-  submitBtn.onclick = handleSubmit;
-}
 // ========== END FORMSUBMIT.CO INTEGRATION ==========
 </script>
 </body>
