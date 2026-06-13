@@ -69,6 +69,7 @@
   --serif: 'Playfair Display', Georgia, serif;
   --sans:  'DM Sans', system-ui, sans-serif;
   --ease:  cubic-bezier(0.16, 1, 0.3, 1);
+   --mono: 'DM Sans', monospace;
 }
 [data-theme="dark"] {
   --ink:           #f0ece4;
@@ -1338,6 +1339,55 @@ footer{
         </div>
       </div>
     </div>
+<!-- Career Timeline -->
+<div class="timeline-wrap reveal">
+  <div class="tl-label">Career arc</div>
+  <div class="timeline-track">
+    <div class="tl-line"></div>
+    <div class="tl-stops" id="tlStops">
+      <div class="tl-stop" data-idx="0">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2002</div>
+        <div class="tl-co">FIS</div>
+        <div class="tl-role-sm">Senior Analyst WFM · India</div>
+      </div>
+      <div class="tl-stop" data-idx="1">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2007</div>
+        <div class="tl-co">HSBC</div>
+        <div class="tl-role-sm">Asst Mgr Analytics &amp; MIS · India</div>
+      </div>
+      <div class="tl-stop active" data-idx="2">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2014</div>
+        <div class="tl-co">Mashreq Bank</div>
+        <div class="tl-role-sm">AVP CX Projects · Dubai UAE</div>
+      </div>
+      <div class="tl-stop" data-idx="3">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2025</div>
+        <div class="tl-co">NZ Safety Blackwoods</div>
+        <div class="tl-role-sm">Mgmt Consultant · Auckland</div>
+      </div>
+      <div class="tl-stop" data-idx="4">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Now</div>
+        <div class="tl-co">Open to roles</div>
+        <div class="tl-role-sm">Auckland, NZ market</div>
+      </div>
+    </div>
+  </div>
+  <div class="tl-detail" id="tlDetail">
+    <div class="tl-detail-title" id="tlDetailTitle">Mashreq Bank, Dubai UAE · AVP CX Projects &amp; User Journey · Sep 2014 – Sep 2024</div>
+    <div class="tl-metrics" id="tlDetailMetrics">
+      <span class="tl-metric-badge">+45pts NPS</span>
+      <span class="tl-metric-badge">40% contact reduction</span>
+      <span class="tl-metric-badge">CEO's Club ×3</span>
+      <span class="tl-metric-badge">Qualtrics VOC implementation</span>
+      <span class="tl-metric-badge">15% sprint predictability improvement</span>
+    </div>
+  </div>
+</div>
 
     <!-- Testimonials -->
     <div class="testimonials-section">
@@ -1718,6 +1768,55 @@ async function handleSubmit() {
     });
   }
 });
+   /* ═══════════════════════════════════════
+   CAREER TIMELINE
+═══════════════════════════════════════ */
+.timeline-wrap { margin-top: 4.5rem; }
+.tl-label { 
+  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; 
+  color: var(--gold); margin-bottom: 1.5rem; 
+  display: flex; align-items: center; gap: .6rem; 
+}
+.tl-label::before { content: ''; width: 1.5rem; height: 1px; background: var(--gold); }
+.timeline-track { position: relative; padding: 0 1.5rem; }
+.tl-line { 
+  position: absolute; top: 10px; left: 1.5rem; right: 1.5rem; 
+  height: 1px; background: var(--border); 
+}
+.tl-stops { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+.tl-stop { display: flex; flex-direction: column; align-items: center; cursor: pointer; }
+.tl-dot {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--paper-surface); border: 1.5px solid var(--border);
+  margin-bottom: .55rem; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .2s, background .2s;
+}
+.tl-stop.active .tl-dot { background: var(--gold); border-color: var(--gold); }
+.tl-stop.active .tl-dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--dark-section); }
+.tl-stop:hover .tl-dot { border-color: var(--gold); }
+.tl-year { font-family: var(--mono, monospace); font-size: .65rem; color: var(--ink-muted); margin-bottom: .2rem; }
+.tl-co { font-size: .68rem; font-weight: 500; color: var(--ink); text-align: center; line-height: 1.35; }
+.tl-role-sm { font-size: .6rem; color: var(--ink-muted); text-align: center; line-height: 1.4; margin-top: .12rem; }
+.tl-detail {
+  margin-top: 1.5rem; padding: 1.1rem 1.35rem;
+  background: var(--paper-surface);
+  border: 1px solid var(--border-gold);
+  border-radius: 3px;
+  transition: opacity .25s;
+}
+.tl-detail-title { font-size: .82rem; font-weight: 500; color: var(--ink); margin-bottom: .55rem; }
+.tl-metrics { display: flex; flex-wrap: wrap; gap: .35rem; }
+.tl-metric-badge {
+  font-size: .68rem; padding: .24rem .65rem;
+  background: var(--gold-pale); color: #6b4c1a;
+  border: 1px solid var(--border-gold); border-radius: 2rem;
+}
+[data-theme="dark"] .tl-metric-badge { 
+  background: rgba(184,144,58,.12); 
+  color: var(--gold-lt); 
+  border-color: var(--border-gold);
+}
 // ========== END FORMSUBMIT.CO INTEGRATION ==========
 </script>
 </body>
