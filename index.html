@@ -316,12 +316,12 @@ section{padding:7rem 4rem}
   width: 100%;
 }
 .headshot-frame {
-  width: 100%;
-  max-width: 360px;
+  width: auto;
+  height: auto;
   background: var(--paper-warm);
   border: 1px solid var(--border-gold);
   border-radius: 4px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -330,18 +330,36 @@ section{padding:7rem 4rem}
 }
 
 .headshot-frame img {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
-
-.headshot-inner{
-  display:flex;flex-direction:column;align-items:center;gap:.75rem;
-  color:var(--ink-muted);
+.headshot-inner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  color: var(--ink-muted);
+  padding: 1rem;
+  pointer-events: none;
 }
-.headshot-inner svg{width:72px;height:72px;opacity:.3}
-.headshot-inner span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.headshot-inner svg {
+  width: 72px;
+  height: 72px;
+  opacity: .3;
+}
+.headshot-inner span {
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
 .headshot-frame::before,.headshot-frame::after{
   content:'';position:absolute;
   width:52%;height:52%;
