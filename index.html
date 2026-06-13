@@ -69,7 +69,7 @@
   --serif: 'Playfair Display', Georgia, serif;
   --sans:  'DM Sans', system-ui, sans-serif;
   --ease:  cubic-bezier(0.16, 1, 0.3, 1);
-   --mono: 'DM Sans', monospace;
+--mono: 'DM Sans', monospace;
 }
 [data-theme="dark"] {
   --ink:           #f0ece4;
@@ -601,6 +601,7 @@ section{padding:7rem 4rem}
 .cert-pill:hover{border-color:var(--gold);color:var(--gold)}
 .cert-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
 
+
 /* Testimonials */
 .testimonials-section{margin-top:5rem}
 .testimonial-carousel{overflow:hidden;border-radius:4px}
@@ -804,6 +805,55 @@ footer{
 #back-top.visible{opacity:1;transform:none;pointer-events:all}
 #back-top:hover{background:#9a7730}
 
+/* ═══════════════════════════════════════
+   CAREER TIMELINE
+═══════════════════════════════════════ */
+.timeline-wrap { margin-top: 4.5rem; }
+.tl-label { 
+  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; 
+  color: var(--gold); margin-bottom: 1.5rem; 
+  display: flex; align-items: center; gap: .6rem; 
+}
+.tl-label::before { content: ''; width: 1.5rem; height: 1px; background: var(--gold); }
+.timeline-track { position: relative; padding: 0 1.5rem; }
+.tl-line { 
+  position: absolute; top: 10px; left: 1.5rem; right: 1.5rem; 
+  height: 1px; background: var(--border); 
+}
+.tl-stops { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+.tl-stop { display: flex; flex-direction: column; align-items: center; cursor: pointer; }
+.tl-dot {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--paper-surface); border: 1.5px solid var(--border);
+  margin-bottom: .55rem; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .2s, background .2s;
+}
+.tl-stop.active .tl-dot { background: var(--gold); border-color: var(--gold); }
+.tl-stop.active .tl-dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--dark-section); }
+.tl-stop:hover .tl-dot { border-color: var(--gold); }
+.tl-year { font-family: var(--mono, monospace); font-size: .65rem; color: var(--ink-muted); margin-bottom: .2rem; }
+.tl-co { font-size: .68rem; font-weight: 500; color: var(--ink); text-align: center; line-height: 1.35; }
+.tl-role-sm { font-size: .6rem; color: var(--ink-muted); text-align: center; line-height: 1.4; margin-top: .12rem; }
+.tl-detail {
+  margin-top: 1.5rem; padding: 1.1rem 1.35rem;
+  background: var(--paper-surface);
+  border: 1px solid var(--border-gold);
+  border-radius: 3px;
+  transition: opacity .25s;
+}
+.tl-detail-title { font-size: .82rem; font-weight: 500; color: var(--ink); margin-bottom: .55rem; }
+.tl-metrics { display: flex; flex-wrap: wrap; gap: .35rem; }
+.tl-metric-badge {
+  font-size: .68rem; padding: .24rem .65rem;
+  background: var(--gold-pale); color: #6b4c1a;
+  border: 1px solid var(--border-gold); border-radius: 2rem;
+}
+[data-theme="dark"] .tl-metric-badge { 
+  background: rgba(184,144,58,.12); 
+  color: var(--gold-lt); 
+  border-color: var(--border-gold);
+}
 /* ═══════════════════════════════════════
    RESPONSIVE — TABLET  ≤ 1024px
 ═══════════════════════════════════════ */
@@ -1768,54 +1818,51 @@ async function handleSubmit() {
     });
   }
 });
-   /* ═══════════════════════════════════════
-   CAREER TIMELINE
-═══════════════════════════════════════ */
-.timeline-wrap { margin-top: 4.5rem; }
-.tl-label { 
-  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; 
-  color: var(--gold); margin-bottom: 1.5rem; 
-  display: flex; align-items: center; gap: .6rem; 
-}
-.tl-label::before { content: ''; width: 1.5rem; height: 1px; background: var(--gold); }
-.timeline-track { position: relative; padding: 0 1.5rem; }
-.tl-line { 
-  position: absolute; top: 10px; left: 1.5rem; right: 1.5rem; 
-  height: 1px; background: var(--border); 
-}
-.tl-stops { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
-.tl-stop { display: flex; flex-direction: column; align-items: center; cursor: pointer; }
-.tl-dot {
-  width: 20px; height: 20px; border-radius: 50%;
-  background: var(--paper-surface); border: 1.5px solid var(--border);
-  margin-bottom: .55rem; z-index: 1;
-  display: flex; align-items: center; justify-content: center;
-  transition: border-color .2s, background .2s;
-}
-.tl-stop.active .tl-dot { background: var(--gold); border-color: var(--gold); }
-.tl-stop.active .tl-dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--dark-section); }
-.tl-stop:hover .tl-dot { border-color: var(--gold); }
-.tl-year { font-family: var(--mono, monospace); font-size: .65rem; color: var(--ink-muted); margin-bottom: .2rem; }
-.tl-co { font-size: .68rem; font-weight: 500; color: var(--ink); text-align: center; line-height: 1.35; }
-.tl-role-sm { font-size: .6rem; color: var(--ink-muted); text-align: center; line-height: 1.4; margin-top: .12rem; }
-.tl-detail {
-  margin-top: 1.5rem; padding: 1.1rem 1.35rem;
-  background: var(--paper-surface);
-  border: 1px solid var(--border-gold);
-  border-radius: 3px;
-  transition: opacity .25s;
-}
-.tl-detail-title { font-size: .82rem; font-weight: 500; color: var(--ink); margin-bottom: .55rem; }
-.tl-metrics { display: flex; flex-wrap: wrap; gap: .35rem; }
-.tl-metric-badge {
-  font-size: .68rem; padding: .24rem .65rem;
-  background: var(--gold-pale); color: #6b4c1a;
-  border: 1px solid var(--border-gold); border-radius: 2rem;
-}
-[data-theme="dark"] .tl-metric-badge { 
-  background: rgba(184,144,58,.12); 
-  color: var(--gold-lt); 
-  border-color: var(--border-gold);
+/* ── CAREER TIMELINE ── */
+const tlData = [
+  {
+    title: 'FIS, India · Senior Analyst WFM · Dec 2002 – Dec 2006',
+    badges: ['WFM scheduling & MIS', 'Single point of contact for US clients', 'Team oversight & escalation management', 'Client SLA management']
+  },
+  {
+    title: 'HSBC, India · Assistant Manager Analytics & MIS · Sep 2007 – Jun 2014',
+    badges: ['MIS team of 12', 'Automated data validation controls', 'Outstanding Performance Award – MIS 2016', 'Workforce capacity forecasting']
+  },
+  {
+    title: 'Mashreq Bank, Dubai UAE · AVP CX Projects & User Journey · Sep 2014 – Sep 2024',
+    badges: ['+45pts NPS', '40% contact reduction', 'CEO\'s Club ×3', 'Qualtrics VOC implementation', '15% sprint predictability improvement']
+  },
+  {
+    title: 'NZ Safety Blackwoods · Management Consultant · Sep 2025 – Oct 2025',
+    badges: ['$500K revenue opportunity identified', 'DeciMatrix segmentation model', 'B2B tiered engagement strategy', 'Executive buy-in secured']
+  },
+  {
+    title: 'Available — Auckland, NZ · Seeking CX / Digital Transformation roles',
+    badges: ['MBA Massey 2025 (Top Academic Excellence)', 'CSPO certified', 'NZ work rights', 'Available now']
+  }
+];
+
+const tlStops = document.querySelectorAll('.tl-stop');
+if (tlStops.length) {
+  tlStops.forEach(stop => {
+    stop.addEventListener('click', () => {
+      tlStops.forEach(s => s.classList.remove('active'));
+      stop.classList.add('active');
+      const d = tlData[+stop.dataset.idx];
+      document.getElementById('tlDetailTitle').textContent = d.title;
+      const container = document.getElementById('tlDetailMetrics');
+      container.innerHTML = d.badges.map(b => `<span class="tl-metric-badge">${b}</span>`).join('');
+    });
+    
+    stop.addEventListener('mouseenter', () => {
+      tlStops.forEach(s => s.classList.remove('active'));
+      stop.classList.add('active');
+      const d = tlData[+stop.dataset.idx];
+      document.getElementById('tlDetailTitle').textContent = d.title;
+      const container = document.getElementById('tlDetailMetrics');
+      container.innerHTML = d.badges.map(b => `<span class="tl-metric-badge">${b}</span>`).join('');
+    });
+  });
 }
 // ========== END FORMSUBMIT.CO INTEGRATION ==========
 </script>
