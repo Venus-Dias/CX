@@ -396,28 +396,25 @@ section{padding:7rem 4rem}
   transform:translateY(-5px);
 }
 .case-card:hover::before{transform:scaleX(1)}
-.case-thumb{
-  width:100%;height:150px;
-  background:rgba(184,144,58,.08);
-  border:1px dashed rgba(184,144,58,.2);
-  border-radius:2px;margin-bottom:1.5rem;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;
-  color:rgba(184,144,58,.4);
-  transition:background .2s;
-}
 .case-thumb {
-    width: 100%;
-    height: 250px;          /* Fixed height for consistency */
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  height: 250px;
+  background: rgba(184,144,58,.08);
+  border: 1px dashed rgba(184,144,58,.2);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background .2s;
 }
 
 .case-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;    /* Shows entire image, may add letterboxing */
-    object-position: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .case-card:hover .case-thumb{background:rgba(184,144,58,.12)}
 .case-tag{font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:.5rem}
