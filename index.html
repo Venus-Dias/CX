@@ -312,14 +312,23 @@ section{padding:7rem 4rem}
   display:flex;justify-content:center;align-items:center;
   position:relative;
 }
-.headshot-frame{
-  width:360px;height:440px;
-  background:var(--paper-warm);
-  border:1px solid var(--border-gold);
-  border-radius:4px;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-  transition:background .35s;
+.headshot-frame {
+  width: auto;
+  background: var(--paper-warm);
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: background .35s;
+}
+
+.headshot-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 /* Replace inner content with <img src="headshot.jpg" alt="Venus Dias"> */
 .headshot-inner{
@@ -665,13 +674,22 @@ section{padding:7rem 4rem}
   gap:6rem;align-items:start;
 }
 .about-image-col{position:sticky;top:8rem}
-.about-img-frame{
-  width:100%;aspect-ratio:3/4;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border-gold);
-  border-radius:4px;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
+.about-img-frame {
+  width: 100%;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-img-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 /* Replace inner div with <img src="photo.jpg" alt="Your Name"> */
 .about-img-frame>div{
@@ -978,15 +996,12 @@ footer{
 
     <div class="hero-visual" aria-hidden="true">
       <div class="headshot-frame">
-        <!-- Replace this div with: <img src="/CX/images/headshot.jpg" alt="Venus Dias - CX Leader"> -->
-        <div class="headshot-inner">
-          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!--<circle cx="40" cy="30" r="16" stroke="#b8903a" stroke-width="1.5"/>-->
-           <!-- <path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="#b8903a" stroke-width="1.5"/>-->
-          </svg> <img src="/CX/images/headshot.jpg" alt="Venus Dias - CX Leader">
-         <!-- <span>Your headshot</span>-->
-        </div>
-      </div>
+  <img src="/CX/images/headshot.jpg" alt="Venus Dias - CX Leader">
+  <div class="headshot-inner">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    </svg>
+  </div>
+</div>
        <div class="float-tag ft1">Journey Design · <b>VOC · Governance</b></div>
 <div class="float-tag ft2"><b>Stakeholder Influence</b> · COE Experience</div>
 <div class="float-tag ft3">Qualtrics · Power BI · <b>Agile Delivery</b></div>
@@ -1507,9 +1522,8 @@ Venus showed me the power of building genuine personal connections at work, and 
     <div class="about-layout">
       <div class="about-image-col reveal from-left">
         <div class="about-img-frame" aria-label="Profile photo placeholder">
-          <!-- Replace with: <img src="headshot.jpg" alt="Venus Dias - CX Leader, Auckland"> -->
-          <div><img src="/CX/images/headshot3.jpg" alt="Venus Dias - CX Leader, Auckland"></div>
-        </div>
+  <img src="/CX/images/headshot3.jpg" alt="Venus Dias - CX Leader, Auckland">
+</div>
         <div class="about-awards">
           <span class="award-chip">🏆 CEO's Club 2019</span>
           <span class="award-chip">🏆 CEO's Club 2022</span>
